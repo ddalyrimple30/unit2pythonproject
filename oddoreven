@@ -1,0 +1,43 @@
+# Define a function to check if a number is odd, even, or a multiple of 4
+def check_odd_even(num):
+    if num % 2 == 0:
+        if num % 4 == 0:
+            print(f"The number {num} is even and a multiple of 4!")
+        else:
+            print(f"The number {num} is even.")
+    else:
+        print(f"The number {num} is odd.")
+
+# Define a function to check if one number divides evenly into another
+def check_division(num, check):
+    if num % check == 0:
+        print(f"{num} divides evenly by {check}.")
+    else:
+        print(f"{num} does not divide evenly by {check}.")
+
+# Main program with loop
+def main():
+    while True:
+        # Ask user if they want to continue
+        user_input = input("\nType 'check' to check a number, or 'quit' to exit: ").lower()
+
+        if user_input == 'quit':
+            print("Goodbye!")
+            break
+        elif user_input == 'check':
+            try:
+                num = int(input("Enter a number: "))
+                check_odd_even(num)
+
+                print("\nNow let's check division:")
+                num_to_check = int(input("Enter a number to check: "))
+                divisor = int(input("Enter a number to divide by: "))
+                check_division(num_to_check, divisor)
+            except ValueError:
+                print("Please enter valid integers!")
+        else:
+            print("Invalid option. Please type 'check' or 'quit'.")
+
+# Run the main program
+if __name__ == "__main__":
+    main()
